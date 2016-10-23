@@ -172,8 +172,9 @@ module.exports = function makeWebpackConfig () {
         config.plugins.push(
             new HtmlWebpackPlugin({
                 template: './index.ejs',
+                favicon: './app/img/favicon.ico',
                 inject: 'body',
-                title: 'GlobalHack',
+                title: 'careHUD',
                 hash: true
             })
         );

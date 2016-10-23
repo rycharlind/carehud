@@ -3,8 +3,9 @@ import uiRouter from 'angular-ui-router';
 
 import OrganizationsComp from './organizations.comp';
 import OrganizationsSvc from './organizations.svc';
+import './../clients/clients'
 
-let organizationsModule = angular.module('organizations', [uiRouter])
+let organizationsModule = angular.module('organizations', [uiRouter, 'clients'])
     .component('organizations', OrganizationsComp)
     .service('organizationsSvc', OrganizationsSvc)
     .config(($stateProvider) => {

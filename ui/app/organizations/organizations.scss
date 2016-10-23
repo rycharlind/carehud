@@ -108,9 +108,62 @@
 
     md-divider {
       border: solid 1px #979797;
+      margin-bottom: 16px;
     }
 
-    &-details {
+    .bed-container {
+      overflow: auto;
+      height: 500px;
+      padding: 8px;
     }
+
+    .bed-details {
+      div {
+        md-icon {
+          font-size: 48px;
+          height: 48px;
+          width: 48px;
+          color: #5caf2b;
+
+          &.active {
+            color: rgba(0, 0, 0, 0.48);
+          }
+        }
+
+      }
+
+      h4 {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        font-size: 11px;
+        color: rgba(0, 0, 0, 0.48);
+        margin: 0;
+      }
+
+      md-grid-tile-footer  {
+        background-color: #5caf2b;
+        color: #fff;
+
+        figcaption {
+          height: 100%;
+          width: 100%;
+
+          .md-button {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+
+            &.active {
+              background-color: rgba(210, 210, 210, 1) !important;
+              color: rgba(0, 0, 0, 0.48);
+            }
+          }
+        }
+
+      }
+    }
+
   }
 }
