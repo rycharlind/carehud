@@ -15,4 +15,20 @@ router.get('/getAll', function(req, res){
 	});
 });
 
+router.get('/getEmployment', function(req, res){
+	var employmentGraph=[];
+	MongoClient.connect(url, function(err, db) {
+		db.collection("employmentEducation").find({Employed: 0}).count(function(err, count) {
+			employmentGraph.push(["0", count]);
+			db.collection("employmentEducation").find({Employed: 1}).count(function(err, count) {
+				employmentGraph.push(["1", count]);
+				db.collection("employmentEducation").find({Employed: 8}).count(function(err, count) {
+					employmentGraph.push(["8", count]);
+					res.json(employmentGraph);
+				});
+			});
+		});
+	});
+});
+
 module.exports = router;

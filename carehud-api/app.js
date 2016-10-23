@@ -4,6 +4,7 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 
 var routes = require('./routes/index');
 var client = require('./routes/client');
@@ -16,9 +17,10 @@ var funder = require('./routes/funder');
 var healthAndDv = require('./routes/healthAndDv');
 var incomeBenefits = require('./routes/incomeBenefits');
 var services = require('./routes/services');
+var visitHistory = require('./routes/visitHistory');
 
 var app = express();
-
+app.use(cors());
 
 
 // view engine setup
@@ -43,6 +45,7 @@ app.use('/funder', funder);
 app.use('/healthAndDv', healthAndDv);
 app.use('/incomeBenefits', incomeBenefits);
 app.use('/services', services);
+app.use('/visitHistory', visitHistory);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

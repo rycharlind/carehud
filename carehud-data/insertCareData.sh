@@ -8,3 +8,4 @@ mongoimport -d carehud -c healthAndDV --type csv --file HealthAndDV.csv --header
 mongoimport -d carehud -c incomeBenefits --type csv --file IncomeBenefits.csv --headerline
 mongoimport -d carehud -c services --type csv --file Services.csv --headerline
 mongoimport -d carehud -c coc --type csv --file Coc.csv --headerline
+mongoimport -d carehud -c visitHistory --type csv --file VisitHistory.csv --headerline
