@@ -1,0 +1,126 @@
+.clients {
+  z-index: 1;
+
+  &-search {
+    position: fixed;
+    height: 64px;
+    top: 64px;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+    padding-left: 32px;
+
+    input {
+      width: 100%;
+      height: 64px;
+      border: none;
+
+      &:focus {
+        outline-width: 0;
+      }
+    }
+  }
+
+  &-container {
+    padding: 114px 96px;
+  }
+
+  &-results-container {
+    padding: 0;
+    margin-right: 32px;
+  }
+
+  &-results-item {
+    width: 548px;
+    height: 100px;
+    background-color: #d8d8d8;
+    margin-bottom: 4px;
+
+    .md-avatar {
+      background-color: #fff;
+      border-radius: 50%;
+      height: 42px;
+      width: 42px;
+    }
+
+    md-icon {
+      position: relative;
+      left: 4px;
+      top: 1px;
+      font-size: 32px;
+    }
+
+    &.active {
+      background-color: rgba(155, 155, 155, 0.74);
+
+      .md-avatar {
+        background-color: #2196f3;
+
+        md-icon {
+          color: #fff;
+        }
+      }
+
+    }
+  }
+
+  &-view-item {
+    position: fixed;
+    left: calc(548px + 96px + 32px);
+    width: 518px;
+    height: 461px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+
+    &-header {
+      width: 518px;
+      height: 78px;
+      background-color: #d8d8d8;
+
+      > span {
+        position: relative;
+        top: 25px;
+        padding-left: 150px;
+        height: 28px;
+        font-size: 24px;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.64);
+      }
+    }
+
+    &-avatar {
+      width: 110px;
+      height: 110px;
+      background-color: #2196f3;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      position: absolute;
+      top: 18px;
+      left: 32px;
+
+      md-icon {
+        position: relative;
+        left: 18px;
+        top: 42px;
+         width: 75px;
+         height: 75px;
+        font-size: 75px;
+        letter-spacing: -1px;
+        color: #ffffff;
+      }
+    }
+
+    &-details {
+      .find-bed-btn {
+        width: 165px;
+        height: 35px;
+        background-color: #5caf2b !important;
+        color: white;
+      }
+    }
+  }
+}

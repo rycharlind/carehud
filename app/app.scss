@@ -1,0 +1,14 @@
+html, body {
+	background-color:whitesmoke;
+}
+
+.page {
+	padding-top: 64px;
+	height: 100%;
+}
+
+@import "clients/clients";
+@import "header/header";
+@import "home/home";
+@import "organizations/organizations";
+@import "sidenav/sidenav";

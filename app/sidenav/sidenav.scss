@@ -1,0 +1,29 @@
+.sidenav {
+    height: 100%;
+    width: 240px;
+
+    &-toolbar {
+        background: #5caf2b !important;
+    }
+
+    md-list-item {
+        md-icon {
+            margin-right: 16px;
+        }
+
+        .md-button {
+            display: block !important;
+            text-align: left;
+            width: 100%;
+            margin: 0;
+            padding: 0px 40px;
+            border-radius: 0;
+            font-weight: 500;
+            line-height: 56px;
+
+            &:hover {
+                background-color: rgba(155, 155, 155, 0.74);
+            }
+        }
+    }
+}

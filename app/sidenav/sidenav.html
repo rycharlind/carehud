@@ -1,0 +1,16 @@
+<md-sidenav class="sidenav md-sidenav-left" md-component-id="left" md-is-locked-open="false" md-whiteframe="4">
+    <md-toolbar class="md-tall sidenav-toolbar"></md-toolbar>
+    <md-content layout="column" flex>
+        <md-list flex>
+            <md-list-item>
+                <md-button ng-click="vm.toggle('Home')" ui-sref="home"><md-icon class="material-icons">home</md-icon> Home</md-button>
+            </md-list-item>
+            <md-list-item>
+                <md-button ng-click="vm.toggle('Clients')" ui-sref="clients"><md-icon class="material-icons">face</md-icon> Clients</md-button>
+            </md-list-item>
+            <md-list-item>
+                <md-button ng-click="vm.toggle('Organizations')" ui-sref="organizations"><md-icon class="material-icons">business</md-icon> Organizations</md-button>
+            </md-list-item>
+        </md-list>
+    </md-content>
+</md-sidenav>

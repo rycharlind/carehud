@@ -1,0 +1,50 @@
+<div class="organizations">
+    <div class="organizations-search" layout="row">
+        <md-icon md-font-icon="material-icons">search</md-icon>
+        <input flex ng-model="vm.searchFor" placeholder="Search organization name, city or zip"/>
+    </div>
+    <div class="organizations-container" layout="row" flex>
+        <md-list class="organizations-results-container">
+            <md-list-item class="md-3-line organizations-results-item" ng-class="{'active': vm.selectedOrganization && organization._id === vm.selectedOrganization._id }" ng-repeat="organization in vm.organizations" ng-click="vm.selectOrganization(organization)">
+                <div class="md-avatar">
+                    <md-icon md-font-icon="material-icons">business</md-icon>
+                </div>
+                <div class="md-list-item-text" layout="column" flex>
+                    <h3>{{ organization.name }}</h3>
+                    <h4>{{ organization.address }}</h4>
+                </div>
+                <div>
+                    <md-icon md-font-icon="material-icons">chevron_right</md-icon>
+                </div>
+            </md-list-item>
+        </md-list>
+
+        <div class="organizations-view-item" ng-show="vm.selectedOrganization">
+            <div class="organizations-view-item-header">
+                <h3>{{ vm.selectedOrganization.name }}</h3>
+                <h4>{{ vm.selectedOrganization.address }}</h4>
+            </div>
+            <br/>
+            <br/>
+            <div class="organizations-view-item-subheader" layout="row">
+                <h2 flex>Available Beds</h2>
+                <h3>{{ vm.selectedOrganization.clients ? vm.selectedOrganization.capacity - vm.selectedOrganization.clients.length : vm.selectedOrganization.capacity }} of {{ vm.selectedOrganization.capacity }}</h3>
+            </div>
+            <md-divider></md-divider>
+            <md-grid-list ng-cloak
+                    md-cols-xs="2" md-cols-sm=" 4" md-cols-md="6" md-cols-gt-md="6"
+                    md-row-height-gt-md="1:1" md-row-height="2:2"
+                    md-gutter="12px" md-gutter-gt-sm="8px" >
+
+                <md-grid-tile md-whiteframe="6" ng-repeat="bed in vm.beds" class="bed-details">
+                    <div>
+                        <h1>Bed {{ $index + 1 }}</h1>
+                    </div>
+                    <md-grid-tile-footer>
+                        <md-button>Check In</md-button>
+                    </md-grid-tile-footer>
+                </md-grid-tile>
+            </md-grid-list>
+        </div>
+    </div>
+</div>

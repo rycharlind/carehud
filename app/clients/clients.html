@@ -1,0 +1,37 @@
+<div class="clients">
+    <div class="clients-search" layout="row">
+        <md-icon md-font-icon="material-icons">search</md-icon>
+        <input flex ng-model="vm.searchFor" placeholder="Search client name, organization, city or zip"/>
+    </div>
+    <div class="clients-container" layout="row" flex>
+        <md-list class="clients-results-container">
+            <md-list-item class="md-3-line clients-results-item" ng-class="{'active': vm.selectedClient && client.UUID === vm.selectedClient.UUID }" ng-repeat="client in vm.clients" ng-click="vm.selectClient(client)">
+                <div class="md-avatar">
+                    <md-icon md-font-icon="material-icons">face</md-icon>
+                </div>
+                <div class="md-list-item-text" layout="column" flex>
+                    <h3>{{ client.First_Name }} {{ client.Last_Name }}</h3>
+                    <h4>{{ client.Gender === 1 ? 'Male' : 'Female' }} - {{ client.DOB ? vm.getAge(client.DOB) + ' years old' : 'No age' }} {{ client.VeteranStatus === 1 ? '- Veteran' : ''}} </h4>
+                    <p></p>
+                </div>
+                <div>
+                    <md-icon md-font-icon="material-icons">chevron_right</md-icon>
+                </div>
+            </md-list-item>
+        </md-list>
+
+        <div class="clients-view-item" ng-show="vm.selectedClient">
+            <div class="clients-view-item-header">
+                <span>{{ vm.selectedClient.First_Name }} {{ vm.selectedClient.Last_Name }}</span>
+            </div>
+            <div class="clients-view-item-avatar">
+                <md-icon md-font-icon="material-icons">face</md-icon>
+            </div>
+            <div class="clients-view-item-details" layout="row" layout-wrap>
+                <div flex="100" layout="row" layout-align="end">
+                    <md-button class="find-bed-btn md-raised">Find a Bed</md-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
