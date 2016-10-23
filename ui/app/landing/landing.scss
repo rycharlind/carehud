@@ -1,0 +1,33 @@
+.landing {
+	z-index:9999;
+	.carehud {
+    	position: fixed;
+    	right:64px;
+    	top:100px;
+    	width:500px;
+    	height:275px;
+    	background-color:rgba(0,0,0,0.45);
+    	text-align: center;
+    	border-left:6px solid #2196f3;
+    	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    	h1 {
+    		color:#fff;
+    		margin:0;
+    	}
+    	.md-button {
+    		margin-top:24px;
+    		padding: 8px 48px;
+    		font-size: 20px;
+    		background-color:#2196f3;
+    	}
+    	.logo {
+    		margin:0 auto;
+    		height: 120px;
+		    width: 298px;
+		    background-size: contain;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-image: url('../app/img/careHUD-logo-white.png');
+    	}
+    }
+}

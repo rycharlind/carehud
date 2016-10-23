@@ -109,7 +109,7 @@ module.exports = function makeWebpackConfig () {
             // Rename the file using the asset hash
             // Pass along the updated reference to your code
             // You can add here any file extension you want to get copied to your output
-            test: /\.(png|jpg|jpeg|gif)$/,
+            test: /\.(png|jpg|jpeg|gif|mov)$/,
             loader: isTest ? 'null' : 'file'
         }, {
             // HTML LOADER

@@ -16,16 +16,18 @@ import './header/header';
 import './home/home';
 import './sidenav/sidenav';
 import './organizations/organizations';
+import './landing/landing';
 
 let module = angular.module('globalhackApp', ['ui.router', 'ngMaterial', 'ngMessages', 'chart.js',
     'clients',
     'header',
     'home',
     'sidenav',
-    'organizations']);
+    'organizations',
+    'landing']);
 
 module.config(($urlRouterProvider) => {
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/landing');
 });
 
 module.config(($httpProvider) => {
