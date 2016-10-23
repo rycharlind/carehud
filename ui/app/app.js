@@ -35,7 +35,7 @@ module.config(($httpProvider) => {
         return {
             request: (httpConfig) => {
                 if(!~httpConfig.url.indexOf('.html')) {
-                    //httpConfig.url = `/api${httpConfig.url}`;
+                    httpConfig.url = `http://carehud.com:3000${httpConfig.url}`;
                 }
 
                 return httpConfig;
