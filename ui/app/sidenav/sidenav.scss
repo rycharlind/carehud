@@ -26,4 +26,15 @@
             }
         }
     }
+
+    .logo {
+        height: 60px;
+        width: 149px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url('../app/img/careHUD-logo-white.png');
+    }
+
+
 }

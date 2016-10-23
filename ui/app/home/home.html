@@ -1,3 +1,46 @@
-<div>
-    <canvas id="ethnicsChart" width="400" height="400"></canvas>
+<div class="home">
+	<h1>Business Intelligence</h1>
+    <md-grid-list ng-cloak
+        md-cols-xs="2" md-cols-sm="4" md-cols-md="4" md-cols-gt-md="4"
+        md-row-height-gt-md="1:1" md-row-height="2:2"
+        md-gutter="12px" md-gutter-gt-sm="8px" >
+
+	    <md-grid-tile md-whiteframe="6" class="chart">
+	    	<div class="chart-title">
+	    		Racial Diversity
+	    	</div>
+	        <canvas id="ethnicsChart"></canvas>
+	    </md-grid-tile>
+
+	   	<md-grid-tile md-whiteframe="6" class="chart">
+	   		 <div class="chart-title">
+	    		Gender Diversity
+	    	</div>
+	        <canvas id="genderChart"></canvas>
+	    </md-grid-tile>
+
+	   	<md-grid-tile md-whiteframe="6" class="chart">
+	   		<div class="chart-title">
+	    		Disability Types
+	    	</div>
+	        <canvas id="disabilityTypeChart"></canvas>
+	    </md-grid-tile>
+
+	    <md-grid-tile md-whiteframe="6" class="chart">
+	    	<div class="chart-title">
+	    		Employment
+	    	</div>
+	        <canvas id="employmentChart"></canvas>
+	    </md-grid-tile>
+
+	   	<md-grid-tile md-whiteframe="6" class="chart">
+	   		<div class="chart-title">
+	    		Veterans / Non-Vets
+	    	</div>
+	        <canvas id="veteransChart"></canvas>
+	    </md-grid-tile>
+
+
+	</md-grid-list>
+
 </div>

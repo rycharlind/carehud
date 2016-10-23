@@ -5,7 +5,7 @@
     </div>
     <div class="organizations-container" layout="row" flex>
         <md-list class="organizations-results-container">
-            <md-list-item class="md-3-line organizations-results-item" ng-class="{'active': vm.selectedOrganization && organization._id === vm.selectedOrganization._id }" ng-repeat="organization in vm.organizations" ng-click="vm.selectOrganization(organization)">
+            <md-list-item class="md-3-line organizations-results-item" ng-class="{'active': vm.selectedOrganization && organization._id === vm.selectedOrganization._id }" ng-repeat="organization in vm.organizations | filter:vm.searchFor" ng-click="vm.selectOrganization(organization)">
                 <div class="md-avatar">
                     <md-icon md-font-icon="material-icons">business</md-icon>
                 </div>
@@ -31,20 +31,24 @@
                 <h3>{{ vm.selectedOrganization.clients ? vm.selectedOrganization.capacity - vm.selectedOrganization.clients.length : vm.selectedOrganization.capacity }} of {{ vm.selectedOrganization.capacity }}</h3>
             </div>
             <md-divider></md-divider>
-            <md-grid-list ng-cloak
-                    md-cols-xs="2" md-cols-sm=" 4" md-cols-md="6" md-cols-gt-md="6"
-                    md-row-height-gt-md="1:1" md-row-height="2:2"
-                    md-gutter="12px" md-gutter-gt-sm="8px" >
+            <div class="bed-container">
+                <md-grid-list ng-cloak
+                              md-cols-xs="2" md-cols-sm="4" md-cols-md="6" md-cols-gt-md="6"
+                              md-row-height-gt-md="1:1" md-row-height="2:2"
+                              md-gutter="16px" md-gutter-gt-sm="16px" >
 
-                <md-grid-tile md-whiteframe="6" ng-repeat="bed in vm.beds" class="bed-details">
-                    <div>
-                        <h1>Bed {{ $index + 1 }}</h1>
-                    </div>
-                    <md-grid-tile-footer>
-                        <md-button>Check In</md-button>
-                    </md-grid-tile-footer>
-                </md-grid-tile>
-            </md-grid-list>
+                    <md-grid-tile md-whiteframe="6" ng-repeat="bed in vm.beds" class="bed-details">
+                        <div>
+                            <h4>Bed {{ bed.id }}</h4>
+                            <md-icon md-font-class="material-icons" ng-class="{ 'active': bed.client }">hotel</md-icon>
+                        </div>
+                        <md-grid-tile-footer>
+                            <md-button ng-disabled="bed.client" ng-click="vm.openDialog(bed)" ng-class="{ 'active': bed.client }">{{ bed.client ? bed.client.firstName + ' ' + bed.client.lastName : 'Check In' }}</md-button>
+                        </md-grid-tile-footer>
+                    </md-grid-tile>
+                </md-grid-list>
+
+            </div>
         </div>
     </div>
 </div>

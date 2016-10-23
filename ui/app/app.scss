@@ -7,8 +7,10 @@ html, body {
 	height: 100%;
 }
 
+@import "organizations/dialogs/check-in";
 @import "clients/clients";
 @import "header/header";
 @import "home/home";
 @import "organizations/organizations";
 @import "sidenav/sidenav";
+@import "landing/landing";

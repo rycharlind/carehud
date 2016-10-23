@@ -5,7 +5,7 @@
     </div>
     <div class="clients-container" layout="row" flex>
         <md-list class="clients-results-container">
-            <md-list-item class="md-3-line clients-results-item" ng-class="{'active': vm.selectedClient && client.UUID === vm.selectedClient.UUID }" ng-repeat="client in vm.clients" ng-click="vm.selectClient(client)">
+            <md-list-item class="md-3-line clients-results-item" ng-class="{'active': vm.selectedClient && client.UUID === vm.selectedClient.UUID }" ng-repeat="client in vm.clients | filter:vm.searchFor" ng-click="vm.selectClient(client)">
                 <div class="md-avatar">
                     <md-icon md-font-icon="material-icons">face</md-icon>
                 </div>
@@ -29,7 +29,32 @@
             </div>
             <div class="clients-view-item-details" layout="row" layout-wrap>
                 <div flex="100" layout="row" layout-align="end">
-                    <md-button class="find-bed-btn md-raised">Find a Bed</md-button>
+                    <md-button class="find-bed-btn md-raised" ui-sref="organizations">Find a Bed</md-button>
+                </div>
+                <div layout="column" flex class="clients-view-item-visits" layout-padding>
+                    <span></span>
+                    <h2>Last Visits</h2>
+                    <md-divider></md-divider>
+                    <md-list>
+                        <md-list-item class="md-2-line" ng-repeat="visit in vm.visits">
+                            <div class="md-avatar">
+                                <md-icon  md-font-icon="material-icons">hotel</md-icon>
+                            </div>
+                            <div class="md-list-item-text">
+                                <div layout="row">
+                                    <h3>{{ visit.cocName }}</h3>
+                                    <span flex></span>
+                                    <h3 class="date">{{ visit.startDate | date:'MMMM d, yyyy' }}</h3>
+                                </div>
+                                <div layout="row">
+                                    <p> {{ visit.city }} {{ visit.state }}</p>
+                                    <span flex></span>
+                                    <p class="date"></p>
+                                </div>
+                            </div>
+                            <md-divider></md-divider>
+                        </md-list-item>
+                    </md-list>
                 </div>
             </div>
         </div>

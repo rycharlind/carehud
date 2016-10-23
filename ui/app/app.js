@@ -16,16 +16,18 @@ import './header/header';
 import './home/home';
 import './sidenav/sidenav';
 import './organizations/organizations';
+import './landing/landing';
 
 let module = angular.module('globalhackApp', ['ui.router', 'ngMaterial', 'ngMessages', 'chart.js',
     'clients',
     'header',
     'home',
     'sidenav',
-    'organizations']);
+    'organizations',
+    'landing']);
 
 module.config(($urlRouterProvider) => {
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/landing');
 });
 
 module.config(($httpProvider) => {
@@ -33,7 +35,7 @@ module.config(($httpProvider) => {
         return {
             request: (httpConfig) => {
                 if(!~httpConfig.url.indexOf('.html')) {
-                    //httpConfig.url = `/api${httpConfig.url}`;
+                    httpConfig.url = `http://carehud.com:3000${httpConfig.url}`;
                 }
 
                 return httpConfig;

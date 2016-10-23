@@ -1,8 +1,11 @@
 class ClientsCtrl {
 
     /**@ngInject*/
-    constructor () {
+    constructor (clientsSvc) {
         this.selectedClient = null;
+        this.visits = [];
+        this.clientsSvc = clientsSvc;
+        this.selectClient(this.clients[0]);
     }
 
     getAge (dob) {
@@ -19,6 +22,12 @@ class ClientsCtrl {
 
     selectClient (client) {
         this.selectedClient = client;
+        this.clientsSvc.setClient(client);
+        this.visits = [];
+
+        this.clientsSvc.getVisitsById(client.UUID).then(response => {
+            this.visits = response.data;
+        });
     }
 }
 
