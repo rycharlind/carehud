@@ -122,5 +122,34 @@
         color: white;
       }
     }
+
+    &-visits {
+      > h2 {
+        font-size: 28px;
+        font-weight: normal;
+        color: rgba(0, 0, 0, 0.48);
+        margin: 0;
+      }
+
+      .md-avatar {
+        border-radius: 50%;
+        background: orange;
+      }
+
+      md-icon {
+        color: #fff;
+        position: relative;
+        top: 8px;
+        left: 9px;
+      }
+
+      md-list-item {
+        padding-top: 0;
+      }
+
+      .date {
+        color: rgba(0, 0, 0, 0.48) !important;
+      }
+    }
   }
 }

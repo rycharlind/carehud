@@ -10,6 +10,10 @@ class ClientsService {
         return this.$http.get('/client/getAll');
     }
 
+    getVisitsById (uuid) {
+        return this.$http.get(`/visitHistory/getByUserId?uuid=${uuid}/`)
+    }
+
     setClient (client) {
         this.client = client;
     }

@@ -50,7 +50,8 @@ class Organizations {
         this.selectedOrganization.clients.push(client);
 
         this.organizationsSvc.checkIn(this.selectedOrganization).then(response => {
-            this.getBeds();
+            this.beds = this.getBeds();
+            this.clientsSvc.setClient(null);
         });
     }
 
