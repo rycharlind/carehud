@@ -19,20 +19,28 @@ router.get('/getEthnics', function(req, res){
 	var raceGraph=[];
 	MongoClient.connect(url, function(err, db) {
 		db.collection("client").find({White: 1}).count(function(err, count) {
-			console.log(count);
-			raceGraph.push({White: count});
+			raceGraph.push(["White", count]);
 			db.collection("client").find({Black: 1}).count(function(err, count) {
-				raceGraph.push({Black: count});
-				console.log(count);
+				raceGraph.push(["Black", count]);
 				db.collection("client").find({AmIndAKNative: 1}).count(function(err, count) {
-					raceGraph.push({AmIndAKNative: count});
-					console.log(count);
+					raceGraph.push(["AmIndAKNative", count]);
 					res.json(raceGraph);
 				});
 			});
 		});
-		
-		
+	});
+});
+
+router.get('/getGenders', function(req, res){
+	var genderGraph=[];
+	MongoClient.connect(url, function(err, db) {
+		db.collection("client").find({Gender: 1}).count(function(err, count) {
+			genderGraph.push(["Male", count]);
+			db.collection("client").find({Gender: 0}).count(function(err, count) {
+				genderGraph.push(["Female", count]);
+					res.json(genderGraph);
+			});
+		});		
 	});
 });
 
